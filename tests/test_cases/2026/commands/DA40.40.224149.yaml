@@ -1,0 +1,5 @@
+command_id: DA40.40.224149
+test_cases:
+- expected_values:
+    PROLOGUE_EVSE_PILOT_C: 38.8
+  response: 18DAF140056241490184

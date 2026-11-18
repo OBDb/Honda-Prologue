@@ -1,0 +1,5 @@
+command_id: DA40.40.2240E6
+test_cases:
+- expected_values:
+    PROLOGUE_HVBAT_COOL_T2: 13.34375
+  response: 18DAF140056240E601AB

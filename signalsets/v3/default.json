@@ -1,4 +1,10 @@
-{ "commands": [
+{ "ecu": [
+    { "hdr": "DA17", "type": "motor" },
+    { "hdr": "DA1D", "type": "motor" },
+    { "hdr": "DA40", "type": "bodyControl" },
+    { "hdr": "DACB", "type": "battery" }
+  ],
+  "commands": [
 { "hdr": "DA17", "rax": "17", "dbg": true, "cmd": {"22": "2414"}, "freq": 1,
   "signals": [
     {"id": "PROLOGUE_HVBAT_C", "path": "Battery", "fmt": { "len": 16, "max": 1000, "min": -1000, "div": 20, "sign": true, "unit": "amps" }, "name": "Traction battery current", "suggestedMetric": "tractionBatteryCurrent", "description": "Signed pack current from the drive-motor/power-electronics controller (negative = charging). Confirmed -22.75 A at a steady 9.22 kW AC charge and +0.9 A accessory draw in Ready. Same register family as Chevy Bolt 7E1 222414."}
@@ -34,43 +40,43 @@
   "signals": [
     {"id": "PROLOGUE_LNG_G", "path": "Orientation", "fmt": { "len": 16, "max": 52, "min": -52, "mul": 15.92796725, "div": 10000, "sign": true, "unit": "gravity" }, "name": "Longitudinal acceleration"}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "40E5"}, "freq": 5,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "40E5"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_HVBAT_COOL_T1", "path": "Battery", "fmt": { "len": 16, "max": 2047, "div": 32, "unit": "celsius" }, "name": "Traction battery coolant temperature 1"}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "40E6"}, "freq": 5,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "40E6"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_HVBAT_COOL_T2", "path": "Battery", "fmt": { "len": 16, "max": 2047, "div": 32, "unit": "celsius" }, "name": "Traction battery coolant temperature 2"}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "4124"}, "freq": 5,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "4124"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_HVBAT_T_B", "path": "Battery", "fmt": { "len": 16, "max": 2047, "div": 32, "unit": "celsius" }, "name": "Traction battery temperature sensor B"}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "4127"}, "freq": 5,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "4127"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_HVBAT_T_A", "path": "Battery", "fmt": { "len": 16, "max": 2047, "div": 32, "unit": "celsius" }, "name": "Traction battery temperature sensor A"}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "4149"}, "freq": 5,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "4149"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_EVSE_PILOT_C", "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 10, "unit": "amps" }, "name": "Charge station pilot current", "description": "J1772 pilot-advertised AC current limit. Read 38.8 A on a 9.2 kW EVSE while plugged; snaps to a 10.0 A default when unplugged."}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "416C"}, "freq": 5,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "416C"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_HVBAT_GRP1_V", "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 100, "unit": "volts" }, "name": "Traction battery group 1 voltage"}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "416D"}, "freq": 5,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "416D"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_HVBAT_GRP2_V", "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 100, "unit": "volts" }, "name": "Traction battery group 2 voltage"}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "416E"}, "freq": 5,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "416E"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_HVBAT_GRP3_V", "path": "Battery", "fmt": { "len": 16, "max": 65, "div": 100, "unit": "volts" }, "name": "Traction battery group 3 voltage", "description": "~51 V battery groups; rise under charge, fall under load, and read 0 with the vehicle off (live measurements behind the contactors)."}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "434F"}, "freq": 5,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "434F"}, "freq": 5, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_HVBAT_T", "path": "Battery", "fmt": { "len": 8, "max": 215, "min": -40, "add": -40, "unit": "celsius" }, "name": "Traction battery temperature", "description": "Same encoding as Chevy Bolt 7E4 22434F."}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "448F"}, "freq": 30,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "448F"}, "freq": 30, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_ODO", "path": "Trips", "fmt": { "len": 32, "max": 671088, "div": 64, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer", "description": "u32/64 km. Verified against the dash to the mile (2,031,186/64 = 31,737 km = 19,720 mi). 22415B returns the same register."}
   ]},
@@ -78,11 +84,11 @@
   "signals": [
     {"id": "PROLOGUE_TP_FL", "path": "Tires", "fmt": { "len": 16, "max": 4095.9375, "div": 16, "unit": "kilopascal" }, "name": "Front left tire pressure", "suggestedMetric": "frontLeftTirePressure"}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "5006"}, "freq": 15,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "5006"}, "freq": 15, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_TP_FR", "path": "Tires", "fmt": { "len": 16, "max": 4095.9375, "div": 16, "unit": "kilopascal" }, "name": "Front right tire pressure", "suggestedMetric": "frontRightTirePressure"}
   ]},
-{ "hdr": "DA40", "rax": "40", "dbg": true, "cmd": {"22": "5007"}, "freq": 15,
+{ "hdr": "DA40", "rax": "40", "cmd": {"22": "5007"}, "freq": 15, "dbgfilter": { "to": 2025, "from": 2027 },
   "signals": [
     {"id": "PROLOGUE_TP_RR", "path": "Tires", "fmt": { "len": 16, "max": 4095.9375, "div": 16, "unit": "kilopascal" }, "name": "Rear right tire pressure", "suggestedMetric": "rearRightTirePressure"}
   ]},

@@ -1,0 +1,8 @@
+command_id: DA40.40.2240E5
+test_cases:
+- expected_values:
+    PROLOGUE_HVBAT_COOL_T1: 28.90625
+  response: 18DAF140056240E5039D
+- expected_values:
+    PROLOGUE_HVBAT_COOL_T1: 29.0625
+  response: 18DAF140056240E503A2

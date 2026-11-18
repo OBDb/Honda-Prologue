@@ -1,0 +1,5 @@
+command_id: DA40.40.22416D
+test_cases:
+- expected_values:
+    PROLOGUE_HVBAT_GRP2_V: 0
+  response: 18DAF1400562416D0000

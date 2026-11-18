@@ -1,0 +1,5 @@
+command_id: DA40.40.224124
+test_cases:
+- expected_values:
+    PROLOGUE_HVBAT_T_B: 13.0625
+  response: 18DAF1400562412401A2

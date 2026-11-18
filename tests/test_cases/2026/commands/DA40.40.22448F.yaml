@@ -1,0 +1,5 @@
+command_id: DA40.40.22448F
+test_cases:
+- expected_values:
+    PROLOGUE_ODO: 13526.625
+  response: 18DAF1400762448F000D35A8
